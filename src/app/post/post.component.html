@@ -1,0 +1,9 @@
+<button
+  class="post"
+  [class]="{ 'post--flipped': !isShowingId, 'post--flipping': isFlipping }"
+  [style]="fadeInStyles"
+  title="Click me to see me flip!"
+  (click)="flip()"
+>
+  {{ isShowingId ? id : userId }}
+</button>

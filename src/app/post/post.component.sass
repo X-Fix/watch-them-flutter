@@ -1,0 +1,42 @@
+.post
+  border: none
+  background: #0d7fff
+  border-radius: 5px
+  box-shadow: 0 4px 10px rgb(47 68 80 / 19%)
+  cursor: pointer
+  color: white
+  display: block
+  font-family: 'Roboto'
+  height: 100%
+  transform: scale(0) translate(-50%, -50%)
+  transition: background 0.1s linear
+  width: 100%
+
+
+.post:hover
+  background: #031d40
+  transition: none
+
+.post.post--flipped
+  background: #ffa94d
+  color: black
+
+.post.post--flipped:hover
+  background: #7f4200
+  color: white
+  transition: none
+
+.post.post--flipping
+  animation: flipping 250ms ease
+
+@keyframes arriving
+  0%
+    transform: scale(0) translate(-50%, -50%)
+  50%, 100%
+    transform: scale(1) translate(0, 0)
+
+@keyframes flipping
+  0%, 100%
+    transform: rotateY(0)
+  50%
+    transform: rotateY(90deg)

@@ -1,0 +1,23 @@
+.mailroom
+  display: flex
+  flex-wrap: wrap
+  height: 100vw
+  list-style: none
+  margin: 0.5rem auto
+  min-height: 422px
+  min-width: 422px
+  padding: 0
+  width: 100vw
+
+  @media screen and (min-width: 768px)
+    height: 768px
+    width: 768px
+
+.postbox
+  display: block
+  flex-basis: calc(10% - 0.25rem)
+  padding: 0.125rem
+
+  @media screen and (min-width: 542px)
+    flex-basis: calc(10% - 0.5rem)
+    padding: 0.25rem
