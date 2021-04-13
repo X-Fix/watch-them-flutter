@@ -8,6 +8,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Caveats](#caveats)
 - [Starting the App](#starting-the-app)
 - [Running tests](#running-tests)
+- [RxJs](#rxjs)
+- [Generic answers](#generic-tests)
 
 ## Introduction
 
@@ -75,6 +77,14 @@ _yarn_
 
 ```shell
 $ yarn test:watch
+```
+
+## RxJS
+
+To view the RxJS bonus answer, checkout the branch using:
+
+```shell
+$ git checkout RxJS
 ```
 
 ## Generic answers
