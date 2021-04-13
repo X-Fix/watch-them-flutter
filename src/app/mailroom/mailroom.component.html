@@ -2,7 +2,7 @@
   <li
     app-post
     class="postbox"
-    *ngFor="let post of posts"
+    *ngFor="let post of posts | async"
     [id]="post.id"
     [userId]="post.userId"
   ></li>

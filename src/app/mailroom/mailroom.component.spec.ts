@@ -49,16 +49,22 @@ describe('MailroomComponent', () => {
     expect(postSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('should store the posts', fakeAsync(() => {
+  it('should emit the fetched posts', fakeAsync(() => {
     spyOn(mockPostalService, 'fetchPosts').and.callThrough();
 
     fixture = TestBed.createComponent(MailroomComponent);
     component = fixture.componentInstance;
 
-    component.ngOnInit();
+    const postsSubject = component.posts;
+    let emittedPosts: Post[] | undefined;
+    postsSubject.subscribe((posts) => {
+      emittedPosts = posts;
+    });
 
+    component.ngOnInit();
     tick(1);
     fixture.detectChanges();
-    expect(component.posts).toBe(mockReturn);
+
+    expect(emittedPosts).toEqual(mockReturn);
   }));
 });

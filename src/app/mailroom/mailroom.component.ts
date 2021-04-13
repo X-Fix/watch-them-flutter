@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 import { PostalService } from '../postal.service';
 import { Post } from '../shared/types';
@@ -9,15 +10,15 @@ import { Post } from '../shared/types';
   styleUrls: ['./mailroom.component.sass'],
 })
 export class MailroomComponent implements OnInit {
-  public posts: Post[];
+  public posts: BehaviorSubject<Post[]>;
 
   constructor(private postalService: PostalService) {
-    this.posts = [];
+    this.posts = new BehaviorSubject<Post[]>([]);
   }
 
   ngOnInit(): void {
     this.postalService.fetchPosts().then((posts) => {
-      this.posts = posts;
+      this.posts.next(posts);
     });
   }
 }
